@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript</title>
+	<style>
+		.header{
+			width: 100%;
+			height: 80px;
+			display: flex;
+			margin-left: -0.8vw;
+		}
+		.logo{
+			width: 10%;
+			height: 80px;
+			background-color:violet;
+		}
+		.text{
+			width: 90%;
+			height: 80px;
+			margin-left: 0vw;
+			background-color: indigo;
+			color: #fff;
+		}
+		.nav-bar{
+			width: 100%;
+			height: 80px;
+			background-color: pink;
+			margin-left: -0.8vw;
+			margin-top: 0vh;
+		}
+		.nav-bar li{
+			color: blue;
+			display: inline-flex;
+			margin-top: 4vh;
+			margin:35px;
+		}
+		.box{
+			width: 100%;
+			height: 300px;
+			display: flex;
+			margin-top: 0px;
+			margin-left: -0.8vw;
+
+		}
+		.leftbox{
+			width: 20%;
+			height: 300px;
+			background-color:indigo;
+			color: white;
+
+		}
+		.leftbox h1{
+			margin-left: 2.5vw;
+		}
+		.leftbox button{
+			color: blue;
+			margin-left: 2.5vw;
+			width: 10vw;
+			height: 5vh;
+		}
+		.rightbox{
+			width: 100%;
+			height: 300px;
+			background-color: violet;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			<h1>LOGO</h1>
+		</div>
+		<div class="text">
+			<h1>Website</h1>
+		</div>
+	</div>
+	<div class="nav-bar">
+		<nav class="nav-links">
+			<li>Home</li>
+			<li>About</li>
+			<li>Content</li>
+		</nav>
+	</div>
+	<div class="box">
+		<div class="leftbox">
+			<h1>Menu</h1>
+			<button>Edit</button><br><br>
+			<button>Delete</button><br><br>
+			<button>Submit</button>
+			
+		</div>
+		<div class="rightbox">
+			<div class="form">
+				<form>
+					<label>header</label><input id="headerBtn" type="checkbox"value=""onclick='change();' ><br/>
+					<label>Links</label><input id="linksBtn" type="checkbox"value=""onclick='change1();' ><br/>
+					<label>left Menu</label><input id="leftMenuBtn" type="checkbox"value=""onclick="change2();" ><br/>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	function change()
+	{
+	
+		var headerBtn=document.querySelector('#headerBtn');
+		var header=document.querySelector('.header');
+		if (headerBtn.checked==true) 
+		{
+			header.style.display='none';
+		}
+		else
+		{
+			header.style.display='flex';
+		}
+	}
+	function change1()
+	{
+		var linksBtn=document.querySelector('#linksBtn');
+		var nav_bar=document.querySelector('.nav-bar');
+		if (linksBtn.checked==true)
+		{
+			nav_bar.style.backgroundColor='blue';
+			nav_bar.style.color='white';
+		}
+		else
+		{
+			nav_bar.style.backgroundColor='yellow';
+			nav_bar.style.color='black';
+			nav_bar.style.fontSize='1.3rem';
+		}
+	}
+	function change2()
+	{
+		var leftMenuBtn=document.querySelector('#leftMenuBtn');
+		var box=document.querySelector('.rightbox');
+		var leftbox=document.querySelector('.leftbox');
+		if (leftMenuBtn.checked==true) 
+		{
+			leftbox.style.display='none';
+			rightbox.style.width='100%';
+			rightbox.style.margin='none';
+		}
+		else
+		{
+			leftbox.style.display='block';
+		}
+		
+	}
+	</script>
+
+</body>
+</html>
